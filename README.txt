@@ -1,0 +1,1 @@
+Help page for chips bot
