@@ -16,31 +16,61 @@
 font-family: gotham-light;
 src: url('gotham-light.ttf');
 }
-    * {
-    	    font-family: "gotham-light";
+* {
+  margin: 0;
+  padding: 0;
+}
+    body {
+          font-family: "gotham-light";
+    padding-bottom:0;   
 
     }
-    	#head {
-    		background-color: #343a40;
-    	}
-    	#c-pic {
-    		width: 69px;
-    	}
-    	#header-main {
-    		background-color:#D3D3D3;
-     	}
-     	#button {
-     	  margin-left: 500px;
-     	}
-    </style>
+    
+    #intro{
+        font-size: 28px;
+
+    }
+      #head {
+        background-color: #343a40;
+
+      }
+      #c-pic {
+        width: 69px;
+        margin-right: 25px;
+      }
+      #header-main {
+        background-color:#D3D3D3;
+      }
+      #button {
+        margin-left: 500px;
+      }
+     
+      #top {
+            font-weight: 500px;
+
+      }
+    
+      .thead{
+        background-color:  #343a40;
+        color: white;
+      }
+      hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+          </style>
   </head>
   <body>
    <!-- nav bar-->
- <nav class="navbar navbar-dark  navbar-expand-sm fixed-top"  id="head">
+ <nav class="navbar navbar-dark navbar-expand-sm"  id="head">
        <div class="container" >
 
-        <a href="https://discordapp.com/oauth2/authorize?&client_id=412324417142521857&scope=bot&permissions=0" class="navbar-brand " target="_blank"><img src="cbot.png" id="c-pic" > Chipsbot version  0.3.1</a>
-         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#idNav"><span class="navbar-toggler-icon"></span></button>
+        <a href="https://discordapp.com/oauth2/authorize?&client_id=412324417142521857&scope=bot&permissions=0" class="navbar-brand danger " target="_blank"><img src="cbot.png" id="c-pic"  >Add Chips Bot</a>
+        
          <div class="collapse navbar-collapse" id="idNav">
            <ul class="navbar-nav ml-auto">
              <li class="nav-item"><a href="https://www.perspectiveapi.com/#/" class="nav-link h4" target="_blank">Made Using</a></li>
@@ -49,89 +79,108 @@ src: url('gotham-light.ttf');
        </div>
      </nav>
 
-     <!-- Intro -->
-  <div class="jumbotron mt-5">
+ 
+
+
+
+   <!-- Intro -->
+
+  <div class="jumbotron "  >
+    
   <div class="container">
-  <div class="display-4">
-    Chipsbot tracks the toxicity of users.
+  <div class="display-4 text-left" id="intro">
+    Chipsbot lets you track how much of a toxic shitlord soemone is on discord.
 
      </div>
-    <p class="h5">This is a help page, the following can also be accases using c!help in a discord server with the Chipsbot in it.</p>
-    <p ><a id ="button "href="https://discordapp.com/oauth2/authorize?&client_id=412324417142521857&scope=bot&permissions=0" class="btn btn-danger" target="_blank">Chips Bot</a></p>
+    <p class="h5">This is a help page. Use the c!help command.</p>
+   
  </div>
 
 <!-- help menu-->
 
-<table class="table">
+<table class="table table-bordered table-hover table-sm " id="stronk">
   <thead class="thead-light">
     <tr>
-      <th scope="col">Command</th>
-      <th scope="col">Usage</th>
-
+      <th scope="col" id="top">Command</th>
+      <th scope="col" id="top">Description</th>
+      <th scope="col" id="top">Example Usage</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">c!toxic "message"</th>
-      <td>returns the toxicity of the message.</td>
-      
+      <th scope="row">c!toxic <span class="text-info">[@user]</span></th>
+      <td>Determines how toxic your message is based on a machine learning algorithm.  Click the "made using" link to learn more</td>
+      <td class="text text-danger">c!toxic your mom is a fat cow<br>  > Toxicity Rating: 78.55312%</td>
     </tr>
      <tr>
-      <th scope="row">c!mosttoxic</th>
-      <td>eturns a list of the most toxic users on the server.</td>
-      
+      <th scope="row">c!top </th>
+      <td>Prints a list of the top 10 most toxic users in this server</td>
+      <td class="text text-danger">c!top</td>
     </tr>
      <tr>
-      <th scope="row">c!mosttoxicmessages(c!leaderboard)</th>
-      <td>returns the highest scoring messages.</td>
-      
-    </tr>
+      <th scope="row"> c!leaderboard </th>
+      <td>Prints the most toxic messages of all time.  Use c!toxic to try for the leaderboard.</td> 
+    <td class="text text-danger">c!leaderboard</td>
   </tr>
-     <tr>
-      <th scope="row">c!averagetoxicity(c!average)</th>
-      <td>tells you how toxic a user is on average</td>
-      
+    <tr>
+      <th scope="row">c!average<span class="text-info">[@user]</span></th>
+      <td>Tells you this user's average toxicity coefficient is based on their post history.</td>  
+    <td class="text text-danger">c!average @chips<br>  > @chips has an average toxicity coefficient of 30.23%</td>  
     </tr>
-    </tr>
-     <tr>
-      <th scope="row">c!toxicpoints(c!total)</th>
-      <td>returns toxicity points.</td>
-      
-    </tr>
+  <tr>
+      <th scope="row">c!total <span class="text-info">[@user]</span></th>
+      <td>Returns the total toxicity point accumulation for a user</td>
+    <td class="text text-danger">c!total @chips<br>  > @chips has a cumulative toxicity score of 114.20 points</td>  
     </tr>
      <tr>
-      <th scope="row">c!summary(c!userstats)</th>
-      <td>gives you the users message count, toxicity score, and average toxicity.
-</td>
-      
-    </tr>
+      <th scope="row">c!userstats <span class="text-info">[@user]</span></th>
+      <td>gives you the users message count, toxicity score, and average toxicity.</td>
+    <td class="text text-danger">c!userstats @chips<br>  > @chips has 379 posts and 114.82 toxicity points. Met this user on 2018-09-01</td>  
     </tr>
      <tr>
-      <th scope="row">c!feedback "your message"</th>
-      <td>Gives The devs feedback</td>
-      
+      <th scope="row">c!feedback <span class="text-info">[message]</span></th>
+      <td>Leave feedback for the developer</td>
+    <td class="text text-danger">c!feedback You're a loser and your bot sucks <br>  > Your message will be read, thank you!</td> 
     </tr>
+     <tr>
+      <th scope="row">c!cuck <span class="text-info">[@user]</span>or <span  class="text-info">[message]</span></th>
+      <td>Determines once and for all whether or not someone is a cuckold</td>
+      <td class="text text-danger">c!cuck Donald Trump <br>  >  Donald Trump wouldn't stay with his woman if she proposed an "open relationship"</td>
+    </tr>
+     <tr>
+      <th scope="row"> c!dicktip</th>
+      <td>Tips from author Dick Masterson</td>
+      <td></td>
+    </tr>
+
+     <tr>
+      <th scope="row"> c!friday</th>
+      <td>Tells you if today is friday or not</td>
+    <td></td>
+    </tr>
+    <br>
+
   
      
   </tbody>
 </table>
+
+
 <!--footer -->
+
 <footer>
-  <div class="container-fluid bg-dark fixed-bottom">
-    <div class="row">
-      <div class="col-md-8 mx-auto ">
+  <div class="container-fluid fixed-bottom mt-5" >
 
-        <p class="text-light text-center "></p>
-        <div class="list-inline text-center">
-          <li class="list-inline-item"><a href="#" class="fab fa-facebook"></a></li>
-         <li class="list-inline-item"><a href="#" class="fab fa-instagram"></a></li>
-         <li class="list-inline-item"><a href="#" ><i class="fab fa-youtube"></i></a></li>
+    <div class="row" style="background-color: #e1e3e4;">
+      <div class="col-md-8 mx-auto " >
 
-        </div>
+        <p class="text-light text-center text-dark text-center font-weight-bold Italic text.">Copyright &copy;Chip Crew Made by Chiplord and some jew</p>
+      
       </div>
     </div>
   </div>
 </footer>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
